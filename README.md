@@ -22,6 +22,7 @@ The project uses [Makefiles](https://www.gnu.org/software/make/manual/html_node/
 - `help` : Shows this help.
 - `local-setup`: Sets up the local environment (e.g. install git hooks).
 - `build`: Builds the app.
+- `install package=XXX`: Installs the package XXX in the app.
 - `run`: Runs the app.
 - `check-typing`: Runs a static analyzer over the code in order to find issues.
 - `check-format`: Checks the code format.

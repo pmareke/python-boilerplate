@@ -6,12 +6,16 @@ help:  ## Show this help.
 		awk 'BEGIN {FS = ":.*?## "}; {printf "%-30s %s\n", $$1, $$2}'
 
 .PHONY: local-setup
-local-setup: ## Set up the local environment (e.g. install git hooks)
+local-setup: ## Sets up the local environment (e.g. install git hooks)
 	scripts/local-setup.sh
 
 .PHONY: build
-build: ## Set up the local environment (e.g. install git hooks)
+build: ## Builds the app
 	docker build .
+
+.PHONY: install
+install: ## Installs a new package in the app. ex: make install package=XXX
+	docker-compose run --rm --no-deps python-boilerplate poetry add $(package)
 
 .PHONY: run
 run: ## Runs the app
