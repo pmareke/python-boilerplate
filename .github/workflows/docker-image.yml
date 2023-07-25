@@ -1,0 +1,25 @@
+name: Test
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  docker:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Mypy
+      run: docker-compose run --rm --no-deps python-boilerplate poetry run poetry run mypy .
+    - name: Yapf
+      run: docker-compose run --rm --no-deps python-boilerplate poetry run poetry run yapf --diff --recursive **/*.py
+    - name: Flake8
+      run: docker-compose run --rm --no-deps python-boilerplate poetry run poetry run  poetry run flake8 .
+    - name: Pylint
+      run: docker-compose run --rm --no-deps python-boilerplate poetry run poetry run poetry run pylint ./**/*.py
+    - name: Tests
+      run: docker-compose run --rm --no-deps python-boilerplate poetry run pytest -n auto tests -ra

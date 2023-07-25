@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  python-boilerplate:
+    image: python-boilerplate
+    build: .
+    volumes:
+      - .:/code
+    environment:
+      PYTHONPATH: .
