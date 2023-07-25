@@ -5,6 +5,9 @@
 - The project runs inside Docker using docker-compose.
 - The project has configured a [Github Action](https://github.com/pmareke/python-boilerplate/actions) which runs on every push to the `main` branch.
 
+## Requirements
+- You only need to have [Docker](https://www.docker.com/) installed.
+
 ## Folder structure
 
 - There is a `tests` folder with the tests files.
