@@ -2,7 +2,7 @@
 
 - This repository is meant to use as a fast starter point.
 - The Python version is the 3.10.
-- The project runs inside Docker.
+- The project runs inside Docker using docker-compose.
 
 ## Folder structure
 
