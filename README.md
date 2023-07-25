@@ -35,6 +35,8 @@ _In order to create a commit you have to pass the pre-commit phase which runs th
 
 ## Packages
 
+This project uses [Poetry](https://python-poetry.org) as the package manager. If you need to add more packages, please take a look to its documentation.
+
 ### Testing
 - [pytest](https://docs.pytest.org/en/7.1.x/contents.html).
 - [pytest-xdist](https://github.com/pytest-dev/pytest-xdist).
