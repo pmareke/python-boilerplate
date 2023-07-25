@@ -1,25 +1,34 @@
-name: Test
+name: deploy
 
 on:
   push:
-    branches:
-    - main
+    branches: [ "main" ]
+    
+permissions:
+  contents: read
 
 jobs:
-  docker:
-    timeout-minutes: 10
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-    - name: Mypy
-      run: docker-compose run --rm --no-deps python-boilerplate poetry run poetry run mypy .
-    - name: Yapf
-      run: docker-compose run --rm --no-deps python-boilerplate poetry run poetry run yapf --diff --recursive **/*.py
-    - name: Flake8
-      run: docker-compose run --rm --no-deps python-boilerplate poetry run poetry run  poetry run flake8 .
-    - name: Pylint
-      run: docker-compose run --rm --no-deps python-boilerplate poetry run poetry run poetry run pylint ./**/*.py
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install poetry
+        poetry install
+    - name: Check style, format and lint
+      run: |
+        poetry run mypy .
+        poetry run yapf --diff --recursive **/*.py
+        poetry run flake8 .                                                     
+        poetry run pylint **/*.py
     - name: Tests
-      run: docker-compose run --rm --no-deps python-boilerplate poetry run pytest -n auto tests -ra
+      run: |
+        PYTHONPATH=. poetry run pytest -ra
