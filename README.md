@@ -3,6 +3,7 @@
 - This repository is meant to use as a fast starter point.
 - The Python version is the 3.10.
 - The project runs inside Docker using docker-compose.
+- The project has configured a [Github Action](https://github.com/pmareke/python-boilerplate/actions) which runs on every push to the `main` branch.
 
 ## Folder structure
 
