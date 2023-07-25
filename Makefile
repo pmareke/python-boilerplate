@@ -13,6 +13,10 @@ local-setup: ## Sets up the local environment (e.g. install git hooks)
 build: ## Builds the app
 	docker build .
 
+.PHONY: update
+update: ## Updates the app packages
+	docker-compose run --rm --no-deps python-boilerplate poetry update
+
 .PHONY: install
 install: ## Installs a new package in the app. ex: make install package=XXX
 	docker-compose run --rm --no-deps python-boilerplate poetry add $(package)
