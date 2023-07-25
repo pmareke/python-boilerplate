@@ -29,7 +29,9 @@ The project uses [Makefiles](https://www.gnu.org/software/make/manual/html_node/
 - `reformat`: Formats the code.
 - `test`: Run all the tests.
 
-_In order to create a commit you have to pass the pre-commit phase which run the check and test commands._
+**Important: Please run the `make local-setup` command before starting with the code.**
+
+_In order to create a commit you have to pass the pre-commit phase which runs the check and test commands._
 
 ## Packages
 
