@@ -30,14 +30,14 @@ _In order to create a commit you have to pass the pre-commit phase which run the
 ## Packages
 
 ### Testing
-- pytest
-- pytest-xdist
-- doublex
-- expects-doublex
-- expects
+- [pytest](https://docs.pytest.org/en/7.1.x/contents.html).
+- [pytest-xdist](https://github.com/pytest-dev/pytest-xdist).
+- [doublex](https://github.com/davidvilla/python-doublex).
+- [expects](https://expects.readthedocs.io/en/stable/).
+- [doublex-expects](https://github.com/jaimegildesagredo/doublex-expects).
 
 ### Code style
-- mypy
-- flake8
-- yapf
-- pylint
+- [mypy](https://mypy.readthedocs.io/en/stable/).
+- [flake8](https://flake8.pycqa.org/en/latest/).
+- [yapf](https://github.com/google/yapf).
+- [pylint](https://github.com/pylint-dev/pylint).
