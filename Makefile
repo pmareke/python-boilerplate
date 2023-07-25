@@ -13,22 +13,26 @@ local-setup: ## Set up the local environment (e.g. install git hooks)
 build: ## Set up the local environment (e.g. install git hooks)
 	docker build .
 
+.PHONY: run
+run: ## Runs the app
+	docker-compose run --rm --no-deps python-boilerplate
+
 .PHONY: check-typing
 check-typing:  ## Run a static analyzer over the code to find issues
-	poetry run mypy .
+	docker-compose run --rm --no-deps python-boilerplate poetry run mypy .
 
 .PHONY: check-format
 check-format: ## Checks the code format
-	poetry run yapf --diff --recursive **/*.py
+	docker-compose run --rm --no-deps python-boilerplate poetry run yapf --diff --recursive **/*.py
 
 .PHONY: check-style
 check-style: ## Checks the code style
-	poetry run flake8 .
-	poetry run pylint ./**/*.py
+	docker-compose run --rm --no-deps python-boilerplate poetry run flake8 .
+	docker-compose run --rm --no-deps python-boilerplate poetry run pylint ./**/*.py
 
 .PHONY: reformat
 reformat:  ## Format python code
-	poetry run yapf --parallel --recursive -ir .
+	docker-compose run --rm --no-deps python-boilerplate poetry run yapf --parallel --recursive -ir .
 
 .PHONY: test
 test: ## Run all the tests
