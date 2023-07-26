@@ -20,6 +20,7 @@ update: ## Updates the app packages
 .PHONY: install
 install: ## Installs a new package in the app. ex: make install package=XXX
 	docker-compose run --rm --no-deps python-boilerplate poetry add $(package)
+	docker build .
 
 .PHONY: run
 run: ## Runs the app
