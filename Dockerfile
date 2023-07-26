@@ -1,4 +1,6 @@
-FROM python:3.10
+FROM python:3.10-alpine3.18
+
+RUN apk  update --no-cache && apk upgrade --no-cache --available
 
 WORKDIR /code
 
