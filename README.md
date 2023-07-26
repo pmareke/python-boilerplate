@@ -1,6 +1,6 @@
 # Python Boilerplate
 
-- This repository is meant to use as a fast starter point.
+- This repository is meant to be used as a fast starter point.
 - The Python version is the 3.10.
 - The project runs inside Docker using docker-compose.
 - The project has configured a [Github Action](https://github.com/pmareke/python-boilerplate/actions) which runs on every push to the `main` branch.
@@ -37,7 +37,7 @@ _In order to create a commit you have to pass the pre-commit phase which runs th
 
 ## Packages
 
-This project uses [Poetry](https://python-poetry.org) as the package manager. If you need to add more packages, please take a look to its documentation.
+This project uses [Poetry](https://python-poetry.org) as the package manager.
 
 ### Testing
 - [pytest](https://docs.pytest.org/en/7.1.x/contents.html).
