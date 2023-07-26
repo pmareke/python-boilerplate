@@ -51,3 +51,7 @@ This project uses [Poetry](https://python-poetry.org) as the package manager.
 - [flake8](https://flake8.pycqa.org/en/latest/): A tool for style guide enforcement.
 - [yapf](https://github.com/google/yapf): A Pyhton formatter.
 - [pylint](https://github.com/pylint-dev/pylint): A static code analyser for Python.
+
+## Contributors
+Special thanks to:
+- [GoldraK](https://github.com/GoldraK).
