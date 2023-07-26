@@ -1,4 +1,4 @@
-name: deploy
+name: Pass checks and tests
 
 on:
   push:
