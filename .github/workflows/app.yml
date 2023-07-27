@@ -27,6 +27,7 @@ jobs:
         poetry run yapf --diff --recursive **/*.py
         poetry run flake8 .                                                     
         poetry run pylint **/*.py
+        poetry run ruff check **/*.py
     - name: Tests
       run: |
-        PYTHONPATH=. poetry run pytest -ra
+        PYTHONPATH=. poetry run pytest -n auto -ra

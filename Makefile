@@ -36,8 +36,7 @@ check-format: ## Checks the code format
 
 .PHONY: check-style
 check-style: ## Checks the code style
-	docker-compose run --rm --no-deps python-boilerplate poetry run flake8 .
-	docker-compose run --rm --no-deps python-boilerplate poetry run pylint ./**/*.py
+	docker-compose run --rm --no-deps python-boilerplate poetry run ruff check **/*.py
 
 .PHONY: reformat
 reformat:  ## Format python code

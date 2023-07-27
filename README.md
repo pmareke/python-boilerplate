@@ -40,6 +40,7 @@ _In order to create a commit you have to pass the pre-commit phase which runs th
 This project uses [Poetry](https://python-poetry.org) as the package manager.
 
 ### Testing
+
 - [pytest](https://docs.pytest.org/en/7.1.x/contents.html): Testing runner.
 - [pytest-xdist](https://github.com/pytest-dev/pytest-xdist): Pytest plugin to run the tests in parallel.
 - [doublex](https://github.com/davidvilla/python-doublex): Powerful test doubles framework for Python.
@@ -47,11 +48,12 @@ This project uses [Poetry](https://python-poetry.org) as the package manager.
 - [doublex-expects](https://github.com/jaimegildesagredo/doublex-expects): A matchers library for the Expects assertion librar.
 
 ### Code style
+
 - [mypy](https://mypy.readthedocs.io/en/stable/): A static type checker.
-- [flake8](https://flake8.pycqa.org/en/latest/): A tool for style guide enforcement.
 - [yapf](https://github.com/google/yapf): A Pyhton formatter.
-- [pylint](https://github.com/pylint-dev/pylint): A static code analyser for Python.
+- [ruff](https://github.com/astral-sh/ruff): An extremely fast Python linter, written in Rust..
 
 ## Contributors
+
 Special thanks to:
 - [GoldraK](https://github.com/GoldraK).
