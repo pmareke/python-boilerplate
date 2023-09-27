@@ -57,3 +57,4 @@ This project uses [Poetry](https://python-poetry.org) as the package manager.
 
 Special thanks to:
 - [GoldraK](https://github.com/GoldraK).
+- [Alex Lopez](https://github.com/alexlopezc)
