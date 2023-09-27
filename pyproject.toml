@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "app"
+name = "python-boilerplate"
 version = "0.1.0"
 description = "This repository is a Python boilerplate to use as a fast starter point"
 authors = ["Pedro Lopez Mareque <pedro.lopez.mareque@gmail.com>"]
