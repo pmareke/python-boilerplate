@@ -54,3 +54,4 @@ rename-project: ## Rename project make rename name=new-name
 	sed -i 's/python-boilerplate/$(name)/' docker-compose.yaml
 	sed -i 's/python-boilerplate/$(name)/' Makefile
 	sed -i 's/python-boilerplate/$(name)/' .github/workflows/trivy.yml
+	sed -i 's/python-boilerplate/$(name)/' pyproject.toml
