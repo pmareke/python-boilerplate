@@ -23,9 +23,9 @@ jobs:
         poetry install
     - name: Check style, format and lint
       run: |
-        poetry run mypy .
-        poetry run yapf --diff --recursive **/*.py
-        poetry run ruff check **/*.py
+        make check-typing
+        make check-format
+        make check-style
     - name: Tests
       run: |
-        PYTHONPATH=. poetry run pytest -n auto -ra
+        make test
