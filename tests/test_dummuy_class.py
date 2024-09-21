@@ -3,7 +3,6 @@ from src.dummy_class import Dummy
 
 
 class TestDummy:
-
     def test_dummy(self) -> None:
         dummy = Dummy()
 

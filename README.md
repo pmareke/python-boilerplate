@@ -1,12 +1,11 @@
 # Python Boilerplate ![status](https://github.com/pmareke/python-boilerplate/actions/workflows/app.yml/badge.svg)
 
 - This repository is meant to be used as a fast starter point.
-- The Python version is the 3.10.
-- The project runs inside Docker using docker-compose.
+- The Python version is the 3.12.
 - The project has configured a [Github Action](https://github.com/pmareke/python-boilerplate/actions) which runs on every push to the `main` branch.
 
 ## Requirements
-- You only need to have [Docker](https://www.docker.com/) installed.
+- You only need to have [Poetry](https://python-poetry.org) installed.
 
 ## Folder structure
 
@@ -19,17 +18,19 @@
 
 The project uses [Makefiles](https://www.gnu.org/software/make/manual/html_node/Introduction.html) to run the most common tasks:
 
-- `help` : Shows this help.
-- `local-setup`: Sets up the local environment (e.g. install git hooks).
+- `add-package package=XXX`: Installs the package XXX in the app, ex: `make install package=requests`.
 - `build`: Builds the app.
-- `update`: Updates the app packages.
-- `install package=XXX`: Installs the package XXX in the app, ex: `make install package=requests`.
-- `run`: Runs the app.
 - `check-typing`: Runs a static analyzer over the code in order to find issues.
 - `check-format`: Checks the code format.
 - `check-style`: Checks the code style.
-- `reformat`: Formats the code.
+- `format`: Formats the code.
+- `help` : Shows this help.
+- `install`: Installs the app packages.
+- `local-setup`: Sets up the local environment (e.g. install git hooks).
+- `run`: Runs the app.
 - `test`: Run all the tests.
+- `update`: Updates the app packages.
+- `watch`: Run all the tests in watch mode.
 
 **Important: Please run the `make local-setup` command before starting with the code.**
 
@@ -50,7 +51,7 @@ This project uses [Poetry](https://python-poetry.org) as the package manager.
 ### Code style
 
 - [mypy](https://mypy.readthedocs.io/en/stable/): A static type checker.
-- [yapf](https://github.com/google/yapf): A Pyhton formatter.
+- [black](https://black.readthedocs.io/en/stable/): A Python formatter.
 - [ruff](https://github.com/astral-sh/ruff): An extremely fast Python linter, written in Rust..
 
 ## Contributors
