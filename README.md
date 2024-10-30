@@ -5,6 +5,7 @@
 - The project has configured a [Github Action](https://github.com/pmareke/python-boilerplate/actions) which runs on every push to the `main` branch.
 
 ## Requirements
+
 - You only need to have [Poetry](https://python-poetry.org) installed.
 
 ## Folder structure
