@@ -12,46 +12,42 @@ local-setup: ## Sets up the local environment (e.g. install git hooks)
 
 .PHONY: install
 install: ## Install the app packages
-	 poetry install
+	 uv sync
 
 .PHONY: update
 update: ## Updates the app packages
-	 poetry update
+	 uv sync
 
 .PHONY: add-package
 add-package: ## Installs a new package in the app. ex: make install package=XXX
-	poetry add $(package)
+	uv add $(package)
 
 .PHONY: run
 run: ## Runs the app
-	python main.py
+	uv run python main.py
 
 .PHONY: check-typing
 check-typing:  ## Run a static analyzer over the code to find issues
-	 poetry run mypy .
+	 uv run mypy .
 
 .PHONY: check-format
 check-format: ## Checks the code format
-	 poetry run black --check src tests
-
-.PHONY: check-style
-check-style: ## Checks the code style
-	 poetry run ruff check **/*.py
+	 uv run ruff check src tests
 
 .PHONY: format
 format:  ## Format python code
-	 poetry run black src tests
+	 uv run ruff format src tests
 
 .PHONY: test
 test: ## Run all the tests
-	 PYTHONPATH=. poetry run pytest -n auto tests -ra
+	 PYTHONPATH=. uv run pytest -n auto tests -ra
 
 .PHONY: watch
 watch: ## Run all the tests in watch mode
-	 PYTHONPATH=. poetry run ptw --runner "pytest -n auto tests -ra"
+	 PYTHONPATH=. uv run ptw --runner "pytest -n auto tests -ra"
 
 .PHONY: pre-commit
-pre-commit: check-format check-typing check-style test
+pre-commit: check-format check-typing test
 	
 .PHONY: rename-project
 rename-project: ## Rename project make rename name=new-name
