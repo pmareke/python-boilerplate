@@ -20,7 +20,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install uv
-        poetry sync
+        uv sync
     - name: Check style, format and lint
       run: |
         make check-typing
