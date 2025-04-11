@@ -25,6 +25,7 @@ The project uses [Makefiles](https://www.gnu.org/software/make/manual/html_node/
 - `check-lint`: Checks the code style.
 - `check-typing`: Runs a static analyzer over the code in order to find issues.
 - `format`: Formats the code.
+- `lint`: Lints the code.
 - `help` : Shows this help.
 - `install`: Installs the app packages.
 - `local-setup`: Sets up the local environment (e.g. install git hooks).
