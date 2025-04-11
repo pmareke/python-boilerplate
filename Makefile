@@ -28,15 +28,23 @@ run: ## Runs the app
 
 .PHONY: check-typing
 check-typing:  ## Run a static analyzer over the code to find issues
-	 uv run mypy .
+	uv run mypy .
+
+.PHONY: check-lint
+check-lint: ## Checks the code style
+	uv run ruff check
+
+.PHONY: lint
+lint: ## Lints the code format
+	uv run ruff check --fix
 
 .PHONY: check-format
-check-format: ## Checks the code format
-	 uv run ruff check src tests
+check-format:  ## Check format python code
+	uv run ruff format --check
 
 .PHONY: format
 format:  ## Format python code
-	 uv run ruff format src tests
+	uv run ruff format
 
 .PHONY: test
 test: ## Run all the tests
@@ -47,7 +55,7 @@ watch: ## Run all the tests in watch mode
 	 PYTHONPATH=. uv run ptw --runner "pytest -n auto tests -ra"
 
 .PHONY: pre-commit
-pre-commit: check-format check-typing test
+pre-commit: check-format check-typing check-lint test
 	
 .PHONY: rename-project
 rename-project: ## Rename project make rename name=new-name
