@@ -6,7 +6,7 @@
 
 ## Requirements
 
-- You only need to have [Poetry](https://python-poetry.org) installed.
+- You only need to have [uv](https://docs.astral.sh/uv) installed.
 
 ## Folder structure
 
@@ -23,7 +23,6 @@ The project uses [Makefiles](https://www.gnu.org/software/make/manual/html_node/
 - `build`: Builds the app.
 - `check-typing`: Runs a static analyzer over the code in order to find issues.
 - `check-format`: Checks the code format.
-- `check-style`: Checks the code style.
 - `format`: Formats the code.
 - `help` : Shows this help.
 - `install`: Installs the app packages.
@@ -39,7 +38,7 @@ _In order to create a commit you have to pass the pre-commit phase which runs th
 
 ## Packages
 
-This project uses [Poetry](https://python-poetry.org) as the package manager.
+This project uses [uv](https://docs.astral.sh/uv) as the package manager.
 
 ### Testing
 
@@ -52,7 +51,6 @@ This project uses [Poetry](https://python-poetry.org) as the package manager.
 ### Code style
 
 - [mypy](https://mypy.readthedocs.io/en/stable/): A static type checker.
-- [black](https://black.readthedocs.io/en/stable/): A Python formatter.
 - [ruff](https://github.com/astral-sh/ruff): An extremely fast Python linter, written in Rust..
 
 ## Contributors
