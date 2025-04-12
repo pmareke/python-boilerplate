@@ -16,7 +16,7 @@ install: ## Install the app packages
 
 .PHONY: update
 update: ## Updates the app packages
-	 uv sync
+	 uv lock
 
 .PHONY: add-package
 add-package: ## Installs a new package in the app. ex: make install package=XXX
