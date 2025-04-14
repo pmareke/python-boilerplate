@@ -166,7 +166,9 @@ wheels = [
 name = "python-boilerplate"
 version = "0.1.0"
 source = { virtual = "." }
-dependencies = [
+
+[package.dev-dependencies]
+test = [
     { name = "doublex" },
     { name = "doublex-expects" },
     { name = "expects" },
@@ -178,7 +180,9 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [
+
+[package.metadata.requires-dev]
+test = [
     { name = "doublex", specifier = ">=1.9.6.1" },
     { name = "doublex-expects", specifier = ">=0.7.1" },
     { name = "expects", specifier = ">=0.9.0" },
