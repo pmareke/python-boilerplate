@@ -5,57 +5,60 @@ help:  ## Show this help.
 	@grep -E '^\S+:.*?## .*$$' $(firstword $(MAKEFILE_LIST)) | \
 		awk 'BEGIN {FS = ":.*?## "}; {printf "%-30s %s\n", $$1, $$2}'
 
+pre-requirements:
+	@scripts/pre-requirements.sh
+
 .PHONY: local-setup
-local-setup: ## Sets up the local environment (e.g. install git hooks)
+local-setup: pre-requirements ## Sets up the local environment (e.g. install git hooks)
 	scripts/local-setup.sh
 	make install
 
 .PHONY: install
-install: ## Install the app packages
+install: pre-requirements ## Install the app packages
 	 uv sync
 
 .PHONY: update
-update: ## Updates the app packages
+update: pre-requirements ## Updates the app packages
 	 uv lock
 
 .PHONY: add-package
-add-package: ## Installs a new package in the app. ex: make install package=XXX
+add-package: pre-requirements ## Installs a new package in the app. ex: make install package=XXX
 	uv add $(package)
 
 .PHONY: run
-run: ## Runs the app
+run: pre-requirements ## Runs the app
 	uv run python main.py
 
 .PHONY: check-typing
-check-typing:  ## Run a static analyzer over the code to find issues
+check-typing: pre-requirements  ## Run a static analyzer over the code to find issues
 	uv run mypy .
 
 .PHONY: check-lint
-check-lint: ## Checks the code style
+check-lint: pre-requirements ## Checks the code style
 	uv run ruff check
 
 .PHONY: lint
-lint: ## Lints the code format
+lint: pre-requirements ## Lints the code format
 	uv run ruff check --fix
 
 .PHONY: check-format
-check-format:  ## Check format python code
+check-format: pre-requirements  ## Check format python code
 	uv run ruff format --check
 
 .PHONY: format
-format:  ## Format python code
+format: pre-requirements  ## Format python code
 	uv run ruff format
 
 .PHONY: test
-test: ## Run all the tests
+test: pre-requirements ## Run all the tests
 	 PYTHONPATH=. uv run pytest -n auto tests -ra
 
 .PHONY: watch
-watch: ## Run all the tests in watch mode
+watch: pre-requirements ## Run all the tests in watch mode
 	 PYTHONPATH=. uv run ptw --runner "pytest -n auto tests -ra"
 
 .PHONY: pre-commit
-pre-commit: check-format check-typing check-lint test
+pre-commit: pre-requirements check-format check-typing check-lint test
 	
 .PHONY: rename-project
 rename-project: ## Rename project make rename name=new-name
