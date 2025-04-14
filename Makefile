@@ -19,7 +19,7 @@ install: pre-requirements ## Install the app packages
 
 .PHONY: update
 update: pre-requirements ## Updates the app packages
-	 uv lock
+	 uv lock --upgrade
 
 .PHONY: add-package
 add-package: pre-requirements ## Installs a new package in the app. ex: make install package=XXX
