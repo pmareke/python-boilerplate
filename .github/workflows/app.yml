@@ -1,15 +1,10 @@
 name: Pass checks and tests
-
 on: [push, pull_request]
-    
 permissions:
   contents: read
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.12
