@@ -15,11 +15,13 @@ local-setup: pre-requirements ## Sets up the local environment (e.g. install git
 
 .PHONY: install
 install: pre-requirements ## Install the app packages
-	 uv sync
+	uv python install 3.12.8
+	uv python pin 3.12.8
+	uv sync
 
 .PHONY: update
 update: pre-requirements ## Updates the app packages
-	 uv lock --upgrade
+	uv lock --upgrade
 
 .PHONY: add-package
 add-package: pre-requirements ## Installs a new package in the app. ex: make install package=XXX
@@ -66,5 +68,4 @@ pre-commit: pre-requirements check-format check-typing check-lint test
 .PHONY: rename-project
 rename-project: ## Rename project make rename name=new-name
 	sed -i 's/python-boilerplate/$(name)/' Makefile
-	sed -i 's/python-boilerplate/$(name)/' .github/workflows/trivy.yml
 	sed -i 's/python-boilerplate/$(name)/' pyproject.toml
