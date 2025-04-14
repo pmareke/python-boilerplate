@@ -49,6 +49,9 @@ check-format: pre-requirements  ## Check format python code
 format: pre-requirements  ## Format python code
 	uv run ruff format
 
+.PHONY: checks
+checks: pre-requirements check-lint check-format check-typing  ## Run all checks
+
 .PHONY: test
 test: pre-requirements ## Run all the tests
 	 PYTHONPATH=. uv run pytest -n auto tests -ra
