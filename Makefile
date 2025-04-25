@@ -56,11 +56,11 @@ checks: pre-requirements check-lint check-format check-typing  ## Run all checks
 
 .PHONY: test
 test: pre-requirements ## Run all the tests
-	 PYTHONPATH=. uv run pytest -n auto tests -ra
+	 PYTHONPATH=. uv run pytest -n auto tests -ra -x --durations=5
 
 .PHONY: watch
 watch: pre-requirements ## Run all the tests in watch mode
-	 PYTHONPATH=. uv run ptw --runner "pytest -n auto tests -ra"
+	 PYTHONPATH=. uv run ptw --runner "pytest -n auto tests -ra -x --durations=5"
 
 .PHONY: pre-commit
 pre-commit: pre-requirements check-format check-typing check-lint test
