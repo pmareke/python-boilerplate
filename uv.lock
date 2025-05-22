@@ -132,9 +132,6 @@ wheels = [
 name = "python-boilerplate"
 version = "0.1.0"
 source = { virtual = "." }
-dependencies = [
-    { name = "ty" },
-]
 
 [package.dev-dependencies]
 test = [
@@ -145,10 +142,10 @@ test = [
     { name = "pytest-watch" },
     { name = "pytest-xdist" },
     { name = "ruff" },
+    { name = "ty" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "ty", specifier = ">=0.0.1a6" }]
 
 [package.metadata.requires-dev]
 test = [
@@ -159,6 +156,7 @@ test = [
     { name = "pytest-watch", specifier = ">=4.2.0" },
     { name = "pytest-xdist", specifier = ">=3.6.1" },
     { name = "ruff", specifier = ">=0.2" },
+    { name = "ty", specifier = ">=0.0.1a6" },
 ]
 
 [[package]]
