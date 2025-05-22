@@ -52,7 +52,7 @@ This project uses [uv](https://docs.astral.sh/uv) as the package manager.
 
 ### Code style
 
-- [mypy](https://mypy.readthedocs.io/en/stable/): A static type checker.
+- [ty](https://github.com/astral-sh/ty): A static type checker.
 - [ruff](https://github.com/astral-sh/ruff): An extremely fast Python linter, written in Rust..
 
 ## Contributors

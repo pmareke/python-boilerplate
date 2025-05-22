@@ -1,0 +1,16 @@
+line-length = 120
+
+[lint]
+select = [
+    "RUF013", # no_implicit_optional 
+    "ANN001", # missing_type_defs
+    "ANN002", # missing_type_defs
+    "ANN003", # missing_type_defs
+    "ANN201", # missing_return
+    "ANN202", # missing_return
+    "ANN204", # missing_return
+    "ANN205", # missing_return
+    "ANN206", # missing_return
+    "ANN401", # any_type
+]
+

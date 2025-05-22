@@ -6,14 +6,15 @@ authors = [{ name = "Pedro Lopez Mareque", email = "pedro.lopez.mareque@gmail.co
 requires-python = "~=3.12"
 readme = "README.md"
 license = "MIT"
-dependencies = []
+dependencies = [
+    "ty>=0.0.1a6",
+]
 
 [dependency-groups]
 test = [
     "doublex>=1.9.6.1",
     "doublex-expects>=0.7.1",
     "expects>=0.9.0",
-    "mypy>=1.11.2",
     "pytest>=7.4.4",
     "pytest-watch>=4.2.0",
     "pytest-xdist>=3.6.1",
@@ -22,10 +23,3 @@ test = [
 
 [tool.uv]
 default-groups = ["test"]
-
-[tool.pyright]
-venvPath = "."
-venv = ".venv"
-
-[tool.ruff]
-line-length = 120

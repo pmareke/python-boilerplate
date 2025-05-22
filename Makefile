@@ -33,7 +33,7 @@ run: pre-requirements ## Runs the app
 
 .PHONY: check-typing
 check-typing: pre-requirements  ## Run a static analyzer over the code to find issues
-	uv run mypy .
+	uv run ty check .
 
 .PHONY: check-lint
 check-lint: pre-requirements ## Checks the code style
