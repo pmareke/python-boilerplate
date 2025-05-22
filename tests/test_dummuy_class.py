@@ -1,4 +1,5 @@
 from expects import equal, expect
+
 from src.dummy_class import Dummy
 
 
