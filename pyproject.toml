@@ -6,9 +6,6 @@ authors = [{ name = "Pedro Lopez Mareque", email = "pedro.lopez.mareque@gmail.co
 requires-python = "~=3.12"
 readme = "README.md"
 license = "MIT"
-dependencies = [
-    "ty>=0.0.1a6",
-]
 
 [dependency-groups]
 test = [
@@ -19,6 +16,7 @@ test = [
     "pytest-watch>=4.2.0",
     "pytest-xdist>=3.6.1",
     "ruff>=0.2",
+    "ty>=0.0.1a6",
 ]
 
 [tool.uv]
