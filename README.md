@@ -45,7 +45,6 @@ This project uses [uv](https://docs.astral.sh/uv) as the package manager.
 ### Testing
 
 - [pytest](https://docs.pytest.org/en/7.1.x/contents.html): Testing runner.
-- [pytest-xdist](https://github.com/pytest-dev/pytest-xdist): Pytest plugin to run the tests in parallel.
 - [doublex](https://github.com/davidvilla/python-doublex): Powerful test doubles framework for Python.
 - [expects](https://expects.readthedocs.io/en/stable/): An expressive and extensible TDD/BDD assertion library for Python..
 - [doublex-expects](https://github.com/jaimegildesagredo/doublex-expects): A matchers library for the Expects assertion librar.
