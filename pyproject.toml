@@ -8,7 +8,7 @@ readme = "README.md"
 license = "MIT"
 
 [dependency-groups]
-test = [
+dev = [
     "doublex>=1.9.6.1",
     "doublex-expects>=0.7.1",
     "expects>=0.9.0",
@@ -19,4 +19,4 @@ test = [
 ]
 
 [tool.uv]
-default-groups = ["test"]
+default-groups = ["dev"]

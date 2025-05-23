@@ -112,7 +112,7 @@ version = "0.1.0"
 source = { virtual = "." }
 
 [package.dev-dependencies]
-test = [
+dev = [
     { name = "doublex" },
     { name = "doublex-expects" },
     { name = "expects" },
@@ -125,7 +125,7 @@ test = [
 [package.metadata]
 
 [package.metadata.requires-dev]
-test = [
+dev = [
     { name = "doublex", specifier = ">=1.9.6.1" },
     { name = "doublex-expects", specifier = ">=0.7.1" },
     { name = "expects", specifier = ">=0.9.0" },
