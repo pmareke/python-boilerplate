@@ -15,6 +15,10 @@ jobs:
       uses: astral-sh/setup-uv@v5
     - name: Install dependencies
       run: make install
+    - name: Activate virtualenv
+      run: |
+        . .venv/bin/activate
+        echo PATH=$PATH >> $GITHUB_ENV
     - name: Check style, format and lint
       run: make checks
     - name: Tests
