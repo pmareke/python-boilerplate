@@ -29,38 +29,38 @@ add-package: pre-requirements ## Installs a new package in the app. ex: make ins
 
 .PHONY: run
 run: pre-requirements ## Runs the app
-	uv run python main.py
+	python main.py
 
 .PHONY: check-typing
 check-typing: pre-requirements  ## Run a static analyzer over the code to find issues
-	uv run ty check .
+	ty check .
 
 .PHONY: check-lint
 check-lint: pre-requirements ## Checks the code style
-	uv run ruff check
+	ruff check
 
 .PHONY: lint
 lint: pre-requirements ## Lints the code format
-	uv run ruff check --fix
+	ruff check --fix
 
 .PHONY: check-format
 check-format: pre-requirements  ## Check format python code
-	uv run ruff format --check
+	ruff format --check
 
 .PHONY: format
 format: pre-requirements  ## Format python code
-	uv run ruff format
+	ruff format
 
 .PHONY: checks
 checks: pre-requirements check-lint check-format check-typing  ## Run all checks
 
 .PHONY: test
 test: pre-requirements ## Run all the tests
-	 PYTHONPATH=. uv run pytest tests -ra -x --durations=5
+	 PYTHONPATH=. pytest tests -ra -x --durations=5
 
 .PHONY: watch
 watch: pre-requirements ## Run all the tests in watch mode
-	 PYTHONPATH=. uv run ptw --runner "pytest tests -ra -x --durations=5"
+	 PYTHONPATH=. ptw --runner "pytest tests -ra -x --durations=5"
 
 .PHONY: pre-commit
 pre-commit: pre-requirements check-format check-typing check-lint test
