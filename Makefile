@@ -68,3 +68,8 @@ watch: pre-requirements ## Run all the tests in watch mode
 
 .PHONY: pre-commit
 pre-commit: pre-requirements check-format check-typing check-lint test
+	
+.PHONY: rename-project
+rename-project: ## Rename project make rename name=new-name
+	sed -i 's/python-boilerplate/$(name)/' Makefile
+	sed -i 's/python-boilerplate/$(name)/' pyproject.toml
