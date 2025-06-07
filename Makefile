@@ -17,7 +17,7 @@ local-setup: pre-requirements ## Sets up the local environment (e.g. install git
 install: pre-requirements ## Install the app packages
 	uv python install 3.12.8
 	uv python pin 3.12.8
-	uv sync
+	uv sync --no-install-project
 
 .PHONY: update
 update: pre-requirements ## Updates the app packages
