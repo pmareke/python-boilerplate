@@ -15,9 +15,16 @@ select = [
     "T20",    # print_found,
     "TRY002", # raise-vanilla-class
 
+    "C4",     # flake8-comprehensions
+    "E",      # pycodestyle errors
+    "F",      # pyflakes
     "I",      # isort
+    "ICN",    # flake8-import-conventions
+    "ISC",    # flake8-str-concat
     "RET",    # flake8-return
     "RUF",    # ruff 
-    "UP"      # pyupgrade
+    "SIM",    # common simplification rules
+    "UP",     # pyupgrade
+    "W"       # pycodestyle warnings
 ]
 
