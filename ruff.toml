@@ -10,11 +10,14 @@ select = [
     "ANN205", # missing-return-type-static-method
     "ANN206", # missing-return-type-class-method
     "ANN401", # any_type
-    "I",       # isort
-    "RET",    # flake8-return
+    "B904",   # raise-without-from-inside-except
     "RSE102", # Unnecessary parentheses on raised exception
-    "RUF013", # no_implicit_optional 
-    "T20",    # print found,
-    "UP"     # pyupgrade
+    "T20",    # print_found,
+    "TRY002", # raise-vanilla-class
+
+    "I",      # isort
+    "RET",    # flake8-return
+    "RUF",    # ruff 
+    "UP"      # pyupgrade
 ]
 
